@@ -2,9 +2,13 @@
   <input type="text" [(ngModel)] = "task">
   <button type="button" (click) = "add()"> Add to List</button>
   <ul>
-    <li *ngFor="let item of tasks">
-      {{item}}
+    <li *ngFor="let item of tasks" [innerHtml]="item">
+      <!--{{item}} interpolação-->
     </li>
   </ul>
   
+</div>
+
+<div [hidden]="isAdmin">
+  Propriedade dinâmica
 </div>

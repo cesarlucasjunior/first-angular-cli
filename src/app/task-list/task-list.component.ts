@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent{
+
+  isAdmin:boolean = false;
   tasks = [];
   task = "";
   add(): void{
