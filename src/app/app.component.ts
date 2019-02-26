@@ -18,4 +18,7 @@ export class AppComponent {
     nome: 'Bob',
     age: 25
   }
+
+  isAdmin:boolean = true;
+  profile:number = 3;
 }

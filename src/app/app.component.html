@@ -10,3 +10,14 @@
   {{date | date : 'dd/MM/yyyy HH:mm'}} <br/>
   {{moeda | currency : 'BRL'}}
 </p>
+
+<div *ngIf="isAdmin">É administrador!</div>
+<div *ngIf="!isAdmin"> É usuário comum!</div>
+
+<br/>
+
+<div [ngSwitch]="profile">
+  <div *ngSwitchCase="1">Você pode ler o conteúdo e alterá-lo</div>
+  <div *ngSwitchCase="2">Você pode ler o conteúdo</div>
+  <div *ngSwitchDefault>Você não pode acessar o conteúdo!</div>
+</div>
