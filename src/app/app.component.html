@@ -28,17 +28,19 @@
 <h1>Lista recuperada de comentários: </h1>
 <app-comment></app-comment>
 -->
-<form>
+<form #form="ngForm">
   <div>
     <label for="name">Nome:</label>
-    <input type="text" id="name" name="name">
+    <input type="text" id="name" name="name" [(ngModel)]="name" #nameVerify="ngModel" required>
+    <span *ngIf="nameVerify.invalid">Nome é obrigatório!</span>
   </div>
   <br/>
   <div>
     <label for="email">Email:</label>
-    <input type="text" id="email" name="email">
+    <input type="text" id="email" name="email" [(ngModel)]="binding" #emailVerify="ngModel" email>
+    <span *ngIf="emailVerify.invalid">E-mail está inválido!</span>
   </div>
   <br/>
-  <button type="submit">Enviar</button>
+  <button type="submit" [disabled]="!form.valid">Enviar</button>
 </form>
 
